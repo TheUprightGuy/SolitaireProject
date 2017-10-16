@@ -27,6 +27,8 @@
 // Static Variables
 CGame* CGame::s_pGame = 0;
 
+CSprite* CardSprite = new CSprite();
+
 // Static Function Prototypes
 
 // Implementation
