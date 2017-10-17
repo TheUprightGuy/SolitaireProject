@@ -49,6 +49,10 @@ public:
     static CGame& GetInstance();
     static void DestroyInstance();
 
+
+	void GetMouse(POINT* _point) { m_mouseCoords = _point; };
+	void GetMouseX(int* _iX) { m_mouseX = _iX; }
+	void GetMouseY(int* _iY) { m_mouseY = _iY; }
 protected:
 
 private:
@@ -57,6 +61,9 @@ private:
     CGame& operator= (const CGame& _kr);
 
     // Member Variables
+	POINT* m_mouseCoords;
+	int * m_mouseX;
+	int * m_mouseY;
 public:
 
 protected:

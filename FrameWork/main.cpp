@@ -26,8 +26,36 @@
 LRESULT CALLBACK
 WindowProc(HWND _hWnd, UINT _uiMsg, WPARAM _wParam, LPARAM _lParam)
 {
+	static POINT mouseCoords = {100, 100};
+	static int mouseX = 0;
+	static int mouseY = 0;
+
+	static bool bDragging = false;
     switch (_uiMsg)
     {
+		case WM_LBUTTONDOWN:
+		{
+//			MessageBox(_hWnd, L"AYYLMAO", NULL, MB_HELP);
+			bDragging = true;
+		}
+		break;
+		case WM_LBUTTONUP:
+		{
+			bDragging = false;
+		}
+		break;
+		case WM_MOUSEMOVE:
+		{
+			if (bDragging)
+			{
+				mouseX = static_cast<int>(LOWORD(_lParam));
+				mouseY = static_cast<int>(HIWORD(_lParam));
+
+				CGame::GetInstance().GetMouseX(&mouseX);
+				CGame::GetInstance().GetMouseY(&mouseY);
+			}	
+		}
+		break;
         case WM_DESTROY:
         {
             PostQuitMessage(0);

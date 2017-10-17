@@ -19,7 +19,7 @@
 #include "BackBuffer.h"
 #include "utils.h"
 #include "sprite.h"
-
+#include "resource.h"
 
 // This Include
 #include "Game.h"
@@ -61,9 +61,14 @@ CGame::Initialise(HINSTANCE _hInstance, HWND _hWnd, int _iWidth, int _iHeight)
     VALIDATE(m_pClock ->Initialise());
     m_pClock->Process();
 
+	CardSprite->Initialise(IDB_CARD, IDB_CARDMASK);
+	CardSprite->SetX(100);
+	CardSprite->SetY(100);
     m_pBackBuffer = new CBackBuffer();
     VALIDATE(m_pBackBuffer->Initialise(_hWnd, _iWidth, _iHeight));
 
+	m_mouseX = 0;
+	m_mouseY = 0;
 //	ShowCursor(false);
 
     return (true);
@@ -75,7 +80,7 @@ CGame::Draw()
     m_pBackBuffer->Clear();
 
 // Do all the game’s drawing here...
-
+	CardSprite->Draw();
 
     m_pBackBuffer->Present();
 }
@@ -85,6 +90,13 @@ CGame::Process(float _fDeltaTick)
 {
     // Process all the game’s logic here.
 	//Load a new sprite.
+	
+	if ((m_mouseX != nullptr) && (m_mouseY != nullptr))
+	{
+		CardSprite->SetX(*m_mouseX);
+		CardSprite->SetY(*m_mouseY);
+	}
+	
 }
 
 void 
