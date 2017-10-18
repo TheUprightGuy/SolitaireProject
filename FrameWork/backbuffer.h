@@ -49,6 +49,9 @@ private:
     CBackBuffer& operator= (const CBackBuffer& _kr);
 
     // Member Variables
+	HBITMAP m_background;
+	HBRUSH m_bgBrush;
+
 public:
 
 protected:
