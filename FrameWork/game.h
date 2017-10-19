@@ -53,6 +53,7 @@ public:
 	void GetMouse(POINT* _point) { m_mouseCoords = _point; };
 	void GetMouseX(int* _iX) { m_mouseX = _iX; }
 	void GetMouseY(int* _iY) { m_mouseY = _iY; }
+
 protected:
 
 private:

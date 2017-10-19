@@ -18,7 +18,10 @@
 #include "Clock.h"
 #include "BackBuffer.h"
 #include "utils.h"
-#include "sprite.h"
+
+//#include "sprite.h"
+#include "card.h"
+
 #include "resource.h"
 
 // This Include
