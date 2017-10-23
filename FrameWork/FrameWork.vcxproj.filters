@@ -53,6 +53,9 @@
     <ClInclude Include="card.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SolitaireProject.rc">
