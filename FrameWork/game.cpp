@@ -30,7 +30,7 @@
 // Static Variables
 CGame* CGame::s_pGame = 0;
 
-CSprite* CardSprite = new CSprite();
+Card* CardSprite = new Card();
 
 // Static Function Prototypes
 
@@ -64,9 +64,10 @@ CGame::Initialise(HINSTANCE _hInstance, HWND _hWnd, int _iWidth, int _iHeight)
     VALIDATE(m_pClock ->Initialise());
     m_pClock->Process();
 
-	CardSprite->Initialise(IDB_CARD, IDB_CARDMASK);
-	CardSprite->SetX(100);
-	CardSprite->SetY(100);
+	//CardSprite->Initialise(IDB_CARD, IDB_CARDMASK);
+	//CardSprite->SetX(100);
+	//CardSprite->SetY(100);
+
     m_pBackBuffer = new CBackBuffer();
     VALIDATE(m_pBackBuffer->Initialise(_hWnd, _iWidth, _iHeight));
 
@@ -83,7 +84,8 @@ CGame::Draw()
     m_pBackBuffer->Clear();
 
 // Do all the game’s drawing here...
-	CardSprite->Draw();
+	//CardSprite->Draw();
+
 
     m_pBackBuffer->Present();
 }
@@ -96,8 +98,8 @@ CGame::Process(float _fDeltaTick)
 	
 	if ((m_mouseX != nullptr) && (m_mouseY != nullptr))
 	{
-		CardSprite->SetX(*m_mouseX);
-		CardSprite->SetY(*m_mouseY);
+//		CardSprite->SetX(*m_mouseX);
+//		CardSprite->SetY(*m_mouseY);
 	}
 	
 }

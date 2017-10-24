@@ -1,10 +1,17 @@
-#include <cstdlib>
+#ifndef __CARD_H__
+#define __CARD_H__
 
-class Card
+#endif // !__CARD_H
+
+#include <cstdlib>
+#include "sprite.h"
+
+class Card : CSprite
 {
 private:
 	int Number; // 1-10, 11-14 = Jack Queen King Ace
 	int Suit; //1 = Hearts, 2 = Diamonds, 3 = Clubs, 4 = Diamonds
+	bool FaceUp;
 	
 	Card* CardAbove; // Card above this card
 	Card* CardUnder; // Card underneath this card
@@ -22,7 +29,7 @@ public:
 
 	~Card(){}
 
-	int GetNumber(){return(Number)}
+	int GetNumber() { return(Number); }
 	void SetNumber(int _number){Number = _number;}
 
 	int GetSuit(){return(Suit);}
