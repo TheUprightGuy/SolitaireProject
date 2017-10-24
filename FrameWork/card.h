@@ -39,7 +39,7 @@ public:
 	void SetSuit(int _suit){Suit = _suit;}
 
 	Card* GetCardAboveThis(){return(CardAboveThis);}
-	void SetCardAbove(Card* _CardAboveThis) { CardAboveThis = _CardAboveThis; }
+	void SetCardAboveThis(Card* _CardAboveThis) { CardAboveThis = _CardAboveThis; }
 	
 	Card* GetCardUnderThis(){return(CardUnderThis);}
 	void SetCardUnderThis(Card* _CardUnderThis) { CardUnderThis = _CardUnderThis; }
