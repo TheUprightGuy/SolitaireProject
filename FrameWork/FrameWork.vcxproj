@@ -157,6 +157,7 @@
     <ClInclude Include="card.h" />
     <ClInclude Include="clock.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="initializeboard.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sprite.h" />
     <ClInclude Include="stack.h" />

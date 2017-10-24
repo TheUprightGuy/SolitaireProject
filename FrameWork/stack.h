@@ -16,12 +16,21 @@ public:
 
 	~Stack(){}
 
-	void Push(Card& _card)
+	void PlaceOnStack(Card* _card)
 	{
-
+		//Card becomes first on stack
+		if (FirstCard == NULL)
+		{
+			FirstCard = _card;
+			_card->SetCardUnderThis(NULL);
+		}
+		else
+		{
+			_card->SetCardUnderThis(FirstCard);
+		}
 	}
 
-	void Pop(Card& _card)
+	void RemoveFromStack(Card* _card)
 	{
 
 	}
