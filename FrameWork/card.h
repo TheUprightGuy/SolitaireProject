@@ -6,7 +6,7 @@
 #include <cstdlib>
 #include "sprite.h"
 
-class Card : CSprite
+class Card : public CSprite
 {
 private:
 	int Number; // 1-10, 11-14 = Jack Queen King Ace

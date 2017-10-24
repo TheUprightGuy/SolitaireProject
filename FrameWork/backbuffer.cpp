@@ -52,8 +52,8 @@ CBackBuffer::Initialise(HWND _hWnd, int _iWidth, int _iHeight)
     m_iWidth = _iWidth;
     m_iHeight = _iHeight;
 
-	m_background = LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_BACKGROUND));
-	m_bgBrush = CreatePatternBrush(LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_BACKGROUND)));
+//	m_background = LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_BACKGROUND));
+//	m_bgBrush = CreatePatternBrush(LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(IDB_BACKGROUND)));
 
     HDC hWindowDC = ::GetDC(m_hWnd);
 
@@ -78,7 +78,7 @@ CBackBuffer::Initialise(HWND _hWnd, int _iWidth, int _iHeight)
 void
 CBackBuffer::Clear()
 {
-    HBRUSH hOldBrush = static_cast<HBRUSH>(SelectObject(GetBFDC(), m_bgBrush));
+    HBRUSH hOldBrush = static_cast<HBRUSH>(SelectObject(GetBFDC(), GetStockObject(LTGRAY_BRUSH)));
 
     Rectangle(GetBFDC(), 0, 0, GetWidth(), GetHeight());
 

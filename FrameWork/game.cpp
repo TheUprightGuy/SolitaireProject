@@ -29,6 +29,7 @@
 
 // Static Variables
 CGame* CGame::s_pGame = 0;
+Card* TestCard = 0;
 
 //CSprite* CardSprite = new CSprite();
 
@@ -64,9 +65,13 @@ CGame::Initialise(HINSTANCE _hInstance, HWND _hWnd, int _iWidth, int _iHeight)
     VALIDATE(m_pClock ->Initialise());
     m_pClock->Process();
 
-	//CardSprite->Initialise(IDB_CARD, IDB_CARDMASK);
-	//CardSprite->SetX(100);
-	//CardSprite->SetY(100);
+	TestCard = new Card;
+	TestCard->Initialise(IDB_CARD, IDB_CARDMASK);
+	TestCard->SetX(100);
+	TestCard->SetY(100);
+
+
+
     m_pBackBuffer = new CBackBuffer();
     VALIDATE(m_pBackBuffer->Initialise(_hWnd, _iWidth, _iHeight));
 
@@ -83,7 +88,7 @@ CGame::Draw()
     m_pBackBuffer->Clear();
 
 // Do all the game’s drawing here...
-	//CardSprite->Draw();
+	TestCard->Draw();
 
     m_pBackBuffer->Present();
 }
@@ -93,11 +98,21 @@ CGame::Process(float _fDeltaTick)
 {
     // Process all the game’s logic here.
 	//Load a new sprite.
-	
+	POINT pTemp;
 	if ((m_mouseX != nullptr) && (m_mouseY != nullptr))
 	{
-		//CardSprite->SetX(*m_mouseX);
-		//CardSprite->SetY(*m_mouseY);
+		pTemp.x = long(*m_mouseX);
+		pTemp.y = long(*m_mouseY);
+	}
+	
+
+	//TestCard->GetHeight
+	RECT pRect = { long(TestCard->GetX()) , long(TestCard->GetY()) ,long(TestCard->GetX() + TestCard->GetWidth()), long(TestCard->GetY()) + TestCard->GetHeight() };
+
+	if (((m_mouseX != nullptr) && (m_mouseY != nullptr)) && PtInRect(&pRect, pTemp))
+	{
+		TestCard->SetX(*m_mouseX);
+		TestCard->SetY(*m_mouseY);
 	}
 	
 }
