@@ -51,9 +51,10 @@ public:
 
 
 	void GetMouse(POINT* _point) { m_mouseCoords = _point; };
-	void GetMouseX(int* _iX) { m_mouseX = _iX; }
-	void GetMouseY(int* _iY) { m_mouseY = _iY; }
+	void SetMouseX(int* _iX) { m_mouseX = _iX; }
+	void SetMouseY(int* _iY) { m_mouseY = _iY; }
 
+	void GetInput(int iButton);
 protected:
 
 private:
@@ -65,6 +66,7 @@ private:
 	POINT* m_mouseCoords;
 	int * m_mouseX;
 	int * m_mouseY;
+
 public:
 
 protected:

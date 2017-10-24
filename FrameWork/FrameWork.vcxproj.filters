@@ -66,9 +66,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Card">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="bitmap1.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -76,9 +73,6 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="70173308-felt-wallpapers.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="bmp00002.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

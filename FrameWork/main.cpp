@@ -47,14 +47,11 @@ WindowProc(HWND _hWnd, UINT _uiMsg, WPARAM _wParam, LPARAM _lParam)
 		break;
 		case WM_MOUSEMOVE:
 		{
-			if (bDragging)
-			{
-				mouseX = static_cast<int>(LOWORD(_lParam));
-				mouseY = static_cast<int>(HIWORD(_lParam));
+			mouseX = static_cast<int>(LOWORD(_lParam));
+			mouseY = static_cast<int>(HIWORD(_lParam));
 
-				CGame::GetInstance().GetMouseX(&mouseX);
-				CGame::GetInstance().GetMouseY(&mouseY);
-			}	
+			CGame::GetInstance().SetMouseX(&mouseX);
+			CGame::GetInstance().SetMouseY(&mouseY);
 		}
 		break;
         case WM_DESTROY:
