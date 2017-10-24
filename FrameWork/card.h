@@ -22,7 +22,7 @@ public:
 
 	~Card(){}
 
-	int GetNumber(){return(Number)}
+	int GetNumber() { return(Number); }
 	void SetNumber(int _number){Number = _number;}
 
 	int GetSuit(){return(Suit);}
