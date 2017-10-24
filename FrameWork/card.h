@@ -8,7 +8,8 @@ private:
 	
 	Card* CardAbove; // Card above this card
 	Card* CardUnder; // Card underneath this card
-
+	
+	bool Faceup;
 
 public:
 	Card()
@@ -18,11 +19,13 @@ public:
 
 		CardAbove = NULL;
 		CardUnder = NULL;
+
+		Faceup = false;
 	}
 
 	~Card(){}
 
-	int GetNumber(){return(Number)}
+	int GetNumber() { return(Number); }
 	void SetNumber(int _number){Number = _number;}
 
 	int GetSuit(){return(Suit);}
@@ -34,7 +37,8 @@ public:
 	Card* GetCardUnder(){return(CardUnder);}
 	void SetCardUnder(Card* _CardUnder) { CardUnder = _CardUnder; }
 
-
+	bool GetFaceup() { return(Faceup); }
+	void SetFaceup(bool _Faceup) { Faceup = _Faceup; }
 
 
 
