@@ -9,3 +9,16 @@
 - create stack_hearts, stack_diamonds, stack_clubs, stack_spades
 - allocate cards to each stack
 */
+
+#ifndef __INITIALIZEBOARD_H__
+#define __INITIALIZEBOARD_H__
+
+class CBoard
+{
+public:
+	CBoard();
+	~CBoard() {};
+
+};
+
+#endif //__INITIALIZEBOARD_H__

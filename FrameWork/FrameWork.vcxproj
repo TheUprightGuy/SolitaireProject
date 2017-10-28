@@ -147,6 +147,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="backbuffer.cpp" />
+    <ClCompile Include="board.cpp" />
     <ClCompile Include="clock.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
