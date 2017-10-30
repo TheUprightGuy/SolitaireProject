@@ -2,7 +2,7 @@
 
 CBoard::CBoard()
 {
-	Create Cards;
-	Create Stacks;
-	Allocate Cards;
+	//Create Cards;
+	//Create Stacks;
+	//Allocate Cards;
 }
